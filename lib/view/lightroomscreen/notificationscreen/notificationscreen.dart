@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/util/colorconst.dart';
-import 'package:flutter_application_1/view/lightroomscreen/lightroom_screen.dart';
+import 'package:flutter_application_1/view/bottomnavigationscreen/bottomnav_screen.dart';
 
 class NotificationScreen extends StatefulWidget {
   const NotificationScreen({super.key});
@@ -20,7 +20,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
             onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => LightroomScreen(),
+                  builder: (context) => BottomnavScreen(),
                 )),
             child: Icon(
               Icons.arrow_back,
@@ -33,7 +33,33 @@ class _NotificationScreenState extends State<NotificationScreen> {
       ),
       body: Center(
           child: Column(
-        children: [Column(children: [Container(height: 100,width: 100,decoration: BoxDecoration(image: DecorationImage(image: image),)],)],
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Column(
+            children: [
+              Container(
+                  height: 100,
+                  width: 100,
+                  decoration: BoxDecoration(
+                    image:
+                        DecorationImage(image: AssetImage("assets/noti.png")),
+                  )),
+              Text(
+                "Activity and notifications",
+                style: TextStyle(color: Colorconst.mainwhite),
+              ),
+              Text(
+                "will appear here",
+                style: TextStyle(color: Colorconst.mainwhite),
+              ),
+            ],
+          ),
+          //    Text(
+          //    "Please go online to view more activity",
+          //style: TextStyle(color: Colorconst.mainwhite),
+          //)
+        ],
       )),
     );
   }
