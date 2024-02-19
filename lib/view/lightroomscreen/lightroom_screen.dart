@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/util/colorconst.dart';
+import 'package:flutter_application_1/view/lightroomscreen/notificationscreen/notificationscreen.dart';
 
 class LightroomScreen extends StatefulWidget {
   const LightroomScreen({super.key});
@@ -32,9 +33,16 @@ class _LightroomScreenState extends State<LightroomScreen> {
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Icon(
-              Icons.notifications,
-              color: Colorconst.maingrey,
+            child: InkWell(
+              onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => NotificationScreen(),
+                  )),
+              child: Icon(
+                Icons.notifications,
+                color: Colorconst.maingrey,
+              ),
             ),
           ),
           Padding(
